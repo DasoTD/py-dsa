@@ -47,6 +47,8 @@ class LinkedList:
                 self.tail = None
             return temp.value
 
+# knjrtjgtnrggbrl,m 
+# mersnvfn
 
  
 
