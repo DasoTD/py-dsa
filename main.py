@@ -29,17 +29,27 @@ class LinkedList:
             self.tail = new_node
         self.length +=1
         return True
-
+    
     def pop(self):
         if self.length == 0:
-            return False
+            return None
         if self.length == 1:
             self.head = None
             self.tail = None
             self.length -=1
         else: 
-            self.tail = None 
+            # pre = self.head
+            temp = self.head
+            while(temp.next):
+                pre = temp
+                temp = temp.next
+            self.tail = pre
+            self.tail.next = None
             self.length -= 1
+            # return True
+
+
+ 
 
 myLinkedList = LinkedList(1)
 myLinkedList.append(2)
