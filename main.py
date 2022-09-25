@@ -132,6 +132,24 @@ class LinkedList:
         #     value.next = val
         self.length += 1
         return True
+
+    def remove(self, index):
+        if index == self.length:
+            return self.pop()
+        if index == 0:
+            return self.pop_first()
+
+        
+        pre = self.Get(index - 1)
+        # temp = self.Get(index) /// this is correct but this is 0(n)
+        # this is 0(1) way to do it below it is
+        temp = pre.next
+        if temp and pre:
+            pre.next = temp.next
+            temp.value = None
+            self.length -= 1
+            return True
+
         
 
  
@@ -142,12 +160,14 @@ myLinkedList.append(2)
 myLinkedList.Get(1)
 myLinkedList.prepend(0)
 myLinkedList.append(3)
-myLinkedList.print_list()
-print(myLinkedList.Get(2))
+# myLinkedList.print_list()
+# print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
 myLinkedList.set_value(1,4)
 myLinkedList.print_list()
 myLinkedList.insert(3,7)
+myLinkedList.print_list()
+myLinkedList.remove(2)
 myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
