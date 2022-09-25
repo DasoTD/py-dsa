@@ -96,8 +96,14 @@ class LinkedList:
 
     def set_value(self, index, value):
         temp = self.Get(index)
-        if temp:
-            temp.value = value 
+        # if temp:
+        #     temp.value = value 
+        #     return True
+        
+        # or 
+
+        if temp is not None:
+            temp.value = value
             return True
         return False
         
