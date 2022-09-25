@@ -1,3 +1,6 @@
+import this
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -81,7 +84,7 @@ class LinkedList:
         temp = self.head
         for _ in range(index):
             temp = temp.next
-        return temp.value
+        return temp
 
         # or
 
@@ -90,6 +93,13 @@ class LinkedList:
         #     if temp.value == index:
         #         return temp.value
         #     temp = temp.next
+
+    def set_value(self, index, value):
+        temp = self.Get(index)
+        if temp:
+            temp.value = value 
+            return True
+        return False
         
 
  
@@ -103,7 +113,8 @@ myLinkedList.append(3)
 myLinkedList.print_list()
 print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
-# myLinkedList.print_list()
+myLinkedList.set_value(1,4)
+myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
 # print(myLinkedList.pop())
