@@ -66,14 +66,14 @@ class LinkedList:
     def pop_first(self):
         if self.length == 0:
             return None
-        else:
-            temp = self.head
-            self.head.next = self.head
-            temp.next = None
+        
+        temp = self.head
+        self.head.next = self.head
+        temp.next = None
         self.length -= 1
         if self.length == 0 :
             self.tail = None
-        return temp
+        return temp.value
 
  
 
