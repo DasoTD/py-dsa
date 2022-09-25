@@ -120,15 +120,16 @@ class LinkedList:
         temp = self.Get(index - 1)
         
         
-        # if temp:
-        #     new_node.next = temp.next
-        #     temp.next = new_node
-        # or
-
-        val = self.Get(index )
         if temp:
-            temp.next = value
-            value.next = val
+            new_node.next = temp.next
+            temp.next = new_node
+        # or
+        # this cannot work because value cannot have .next except been made a Node
+
+        # val = self.Get(index )
+        # if temp:
+        #     temp.next = value
+        #     value.next = val
         self.length += 1
         return True
         
@@ -146,7 +147,7 @@ print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
 myLinkedList.set_value(1,4)
 myLinkedList.print_list()
-myLinkedList.insert(4,7)
+myLinkedList.insert(3,7)
 myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
