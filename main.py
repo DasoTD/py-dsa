@@ -1,3 +1,4 @@
+from operator import ne
 import this
 
 
@@ -99,13 +100,37 @@ class LinkedList:
         # if temp:
         #     temp.value = value 
         #     return True
-        
+
         # or 
 
         if temp is not None:
             temp.value = value
             return True
         return False
+    
+    def insert(self, index, value):
+        if index == 0:
+            return self.prepend(value)
+
+        if index == self.length:
+            return self.append(value)
+
+        new_node = Node(value)
+
+        temp = self.Get(index - 1)
+        
+        
+        # if temp:
+        #     new_node.next = temp.next
+        #     temp.next = new_node
+        # or
+
+        val = self.Get(index )
+        if temp:
+            temp.next = value
+            value.next = val
+        self.length += 1
+        return True
         
 
  
@@ -120,6 +145,8 @@ myLinkedList.print_list()
 print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
 myLinkedList.set_value(1,4)
+myLinkedList.print_list()
+myLinkedList.insert(4,7)
 myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
