@@ -71,6 +71,8 @@ class LinkedList:
             self.head.next = self.head
             temp.next = None
         self.length -= 1
+        if self.length == 0 :
+            self.tail = None
         return temp
 
  
