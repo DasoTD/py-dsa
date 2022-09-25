@@ -75,15 +75,31 @@ class LinkedList:
             self.tail = None
         return temp
 
+    def Get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+        return temp.value
+        # while temp is not None:
+        #     # print(temp.value)
+        #     if temp == index:
+        #         return temp
+        #     temp = temp.next
+
  
 
 myLinkedList = LinkedList(1)
 myLinkedList.append(2)
-myLinkedList.print_list()
+# myLinkedList.print_list()
+myLinkedList.Get(1)
 myLinkedList.prepend(0)
+myLinkedList.append(3)
 myLinkedList.print_list()
-myLinkedList.pop_first()
-myLinkedList.print_list()
+print(myLinkedList.Get(2))
+# myLinkedList.pop_first()
+# myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
 # print(myLinkedList.pop())
