@@ -144,11 +144,11 @@ class LinkedList:
         # temp = self.Get(index) /// this is correct but this is 0(n)
         # this is 0(1) way to do it below it is
         temp = pre.next
-        if temp and pre:
+        if pre:
             pre.next = temp.next
-            temp.value = None
+            temp.next = None
             self.length -= 1
-            return True
+            return temp
 
         
 
@@ -163,11 +163,11 @@ myLinkedList.append(3)
 # myLinkedList.print_list()
 # print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
-myLinkedList.set_value(1,4)
+# myLinkedList.set_value(1,4)
+# myLinkedList.print_list()
+# myLinkedList.insert(3,7)
 myLinkedList.print_list()
-myLinkedList.insert(3,7)
-myLinkedList.print_list()
-myLinkedList.remove(2)
+print(myLinkedList.remove(2))
 myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
