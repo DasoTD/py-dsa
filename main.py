@@ -150,6 +150,33 @@ class LinkedList:
             self.length -= 1
             return temp
 
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before =None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
+            # return self
+        # pass 
+    #     reverse(){
+    #     let temp = this.head
+    #     this.head = this.tail
+    #     this.tail = temp
+    #     let next = temp.next
+    #     let prev = null
+    #     for(let i =0; i< this.length; i++){
+    #         next = temp.next
+    #         temp.next = prev
+    #         prev = temp
+    #         temp = next
+    #     }
+    #     return this
+    # }
         
 
  
@@ -168,6 +195,8 @@ myLinkedList.append(3)
 # myLinkedList.insert(3,7)
 myLinkedList.print_list()
 print(myLinkedList.remove(2))
+myLinkedList.print_list()
+myLinkedList.reverse()
 myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
