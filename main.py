@@ -34,7 +34,7 @@ class LinkedList:
         if self.length == 0:
             return None
         else: 
-            pre = self.head
+            # pre = self.head
             temp = self.head
             while(temp.next):
                 pre = temp
@@ -53,13 +53,14 @@ class LinkedList:
             self.head = new_node
             self.tail = new_node
         else:
-            temp = self.head
-            self.head = new_node
-            self.head.next = temp
-        self.length += 1
+            # temp = self.head
+            # self.head = new_node
+            # self.head.next = temp
+        
         # or
-        # new_node.next = self.head
-        # self.head = new_node
+            new_node.next = self.head
+            self.head = new_node
+        self.length += 1
         return True
 
     def pop_first(self):
