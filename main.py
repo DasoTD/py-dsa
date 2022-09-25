@@ -82,11 +82,15 @@ class LinkedList:
         for _ in range(index):
             temp = temp.next
         return temp.value
+
+        # or
+
+        # temp = self.head
         # while temp is not None:
-        #     # print(temp.value)
-        #     if temp == index:
-        #         return temp
+        #     if temp.value == index:
+        #         return temp.value
         #     temp = temp.next
+        
 
  
 
