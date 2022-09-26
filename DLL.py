@@ -70,6 +70,25 @@ class DoubbleLinkedList:
             new_node.next = self.head
             self.head = new_node
         self.length +=1
+
+    def pop_first(self):
+        if self.head is None:
+            return False
+        temp = self.head
+        if self.length == 1:
+            self.head =  None
+            self.tail = None
+            self.length -= 1
+            return temp
+        else: 
+            nezt = self.head.next
+            self.head.next = None
+            nezt.prev = None
+            self.head = nezt
+            self.length -= 1
+            return temp.value
+
+            
             
             
 
@@ -77,8 +96,10 @@ myDLL = DoubbleLinkedList(4)
 myDLL.print_list()
 myDLL.append(3)
 # myDLL.print_list()
-myDLL.append(2)
-myDLL.print_list()
+# myDLL.append(2)
+# myDLL.print_list()
 # print(myDLL.pop())
 myDLL.prepend(0)
+myDLL.print_list()
+print(myDLL.pop_first())
 myDLL.print_list()
