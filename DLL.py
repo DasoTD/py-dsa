@@ -21,7 +21,8 @@ class DoubbleLinkedList:
     
     def append(self, value):
         new_node = Node(value)
-        if self.length == 0:
+        #  if self.length == 0:
+        if self.head is None :
             self.head = new_node
             self.tail = new_node
         else:
@@ -58,6 +59,17 @@ class DoubbleLinkedList:
             # temp.prev = None
             # self.length -= 1
             # return temp.value
+
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.head is None :
+            self.head = new_node
+            self.tail = new_node
+        else: 
+            self.head.prev = new_node
+            new_node.next = self.head
+            self.head = new_node
+        self.length +=1
             
             
 
@@ -67,5 +79,6 @@ myDLL.append(3)
 # myDLL.print_list()
 myDLL.append(2)
 myDLL.print_list()
-print(myDLL.pop())
+# print(myDLL.pop())
+myDLL.prepend(0)
 myDLL.print_list()
