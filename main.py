@@ -38,7 +38,7 @@ class LinkedList:
         if self.length == 0:
             return None
         else: 
-            # pre = self.head
+            pre = self.head
             temp = self.head
             while(temp.next):
                 pre = temp
@@ -187,6 +187,7 @@ myLinkedList.append(2)
 myLinkedList.Get(1)
 myLinkedList.prepend(0)
 myLinkedList.append(3)
+myLinkedList.pop()
 # myLinkedList.print_list()
 # print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
@@ -194,10 +195,10 @@ myLinkedList.append(3)
 # myLinkedList.print_list()
 # myLinkedList.insert(3,7)
 myLinkedList.print_list()
-print(myLinkedList.remove(2))
-myLinkedList.print_list()
-myLinkedList.reverse()
-myLinkedList.print_list()
+# print(myLinkedList.remove(2))
+# myLinkedList.print_list()
+# myLinkedList.reverse()
+# myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
 # print(myLinkedList.pop())
