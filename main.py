@@ -86,7 +86,7 @@ class LinkedList:
         temp = self.head
         for _ in range(index):
             temp = temp.next
-        return temp
+        return temp.value
 
         # or
 
@@ -185,17 +185,17 @@ class LinkedList:
 myLinkedList = LinkedList(1)
 myLinkedList.append(2)
 # myLinkedList.print_list()
-myLinkedList.Get(1)
+print(myLinkedList.Get(1))
 myLinkedList.prepend(0)
 myLinkedList.append(3)
-myLinkedList.pop()
+# myLinkedList.pop()
 # myLinkedList.print_list()
 # print(myLinkedList.Get(2))
 # myLinkedList.pop_first()
 # myLinkedList.set_value(1,4)
 # myLinkedList.print_list()
 # myLinkedList.insert(3,7)
-myLinkedList.print_list()
+# myLinkedList.print_list()
 # print(myLinkedList.remove(2))
 # myLinkedList.print_list()
 # myLinkedList.reverse()
