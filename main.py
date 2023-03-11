@@ -86,7 +86,7 @@ class LinkedList:
         temp = self.head
         for _ in range(index):
             temp = temp.next
-        return temp.value
+        return temp
 
         # or
 
@@ -168,7 +168,16 @@ class LinkedList:
                 current = current.next
         return hash
 
-        
+    def printKthToLast(self, index):
+        if index < 0 or index > self.length:
+            return None
+        if index == self.length:
+            return self.pop()
+        temp = self.Get(index)
+        while temp:
+            print(temp.value)
+            temp = temp.next
+
 
     def reverse(self):
         temp = self.head
@@ -206,10 +215,14 @@ myLinkedList.append(2)
 myLinkedList.append(3)
 myLinkedList.append(2)
 myLinkedList.append(3)
+myLinkedList.append(3)
+myLinkedList.append(4)
+myLinkedList.append(5)
 # myLinkedList.print_list()
 # print(myLinkedList.Get(1))
 # myLinkedList.prepend(0)
 # myLinkedList.append(3)
+print(myLinkedList.printKthToLast(5))
 print(myLinkedList.remove_duplicate(myLinkedList.head))
 # myLinkedList.pop()
 # myLinkedList.print_list()
