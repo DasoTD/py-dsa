@@ -151,6 +151,25 @@ class LinkedList:
             self.length -= 1
             return temp
 
+
+    def remove_duplicate(self, head):
+        if self.head is None or self.head.next is None:
+            return head
+        
+        hash = set()
+        current = head
+        hash.add(self.head.value)
+
+        while current.next is not None:
+            if current.next.value  in hash:
+                current.next = current.next.next
+            else:
+                hash.add(current.next.value)
+                current = current.next
+        return hash
+
+        
+
     def reverse(self):
         temp = self.head
         self.head = self.tail
@@ -184,10 +203,14 @@ class LinkedList:
 
 myLinkedList = LinkedList(1)
 myLinkedList.append(2)
-# myLinkedList.print_list()
-print(myLinkedList.Get(1))
-myLinkedList.prepend(0)
 myLinkedList.append(3)
+myLinkedList.append(2)
+myLinkedList.append(3)
+# myLinkedList.print_list()
+# print(myLinkedList.Get(1))
+# myLinkedList.prepend(0)
+# myLinkedList.append(3)
+print(myLinkedList.remove_duplicate(myLinkedList.head))
 # myLinkedList.pop()
 # myLinkedList.print_list()
 # print(myLinkedList.Get(2))
