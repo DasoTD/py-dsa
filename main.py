@@ -21,7 +21,7 @@ class LinkedList:
         while temp is not None:
             print(temp.value)
             temp = temp.next
-            # return True
+        return True
     
     def append(self, value):
         new_node = Node(value)
@@ -152,61 +152,42 @@ class LinkedList:
             return temp
 
 
-    # def partition(self, x):
-        # head = self.head
-        # while head:
-        #     if head.value < x:
-        #         self.prepend(head.value)
-        #     else:
-        #         self.append(head.value)
-        # return head
-        # pass
+   
 
 
-    # def partition(self, x):
-    #     head = self.head
-    #     tail = self.tail
-        
-    #     while head:
-    #         next = head.next
-    #         if head.value < x:
-    #             x = head
-    #             head = next
-    #         else:
-    #             tail.next = x
-    #     # pass
-    def partition(head, x):
-     
-    # Let us initialize start and
-    # tail nodes of new list
-        tail = head
-    
-        # Now iterate original list
-        # and connect nodes
-        curr = head
-        while curr :
-            next = curr.next
-            if curr.value < x:
-                
-                # Insert node at head.
-                curr.next = head
-                head = curr
+    def partition(self, x):
+        x = self.Get(x)
+        tail = self
+        head= self
+
+        while self:
+            next = self.next
+            print(next)
+            if self.value < x.value :
+                self.next = head
+                head = self
             
             else:
-                
-                # Append to the list of greater values
-                # Insert node at tail.
-                tail.next = curr
-                tail = curr
-            
-            curr = next
-        
+                tail.next = self
+                tail = self
+            self = next
         tail.next = None
-    
-        # The head has changed, so we need
-        # to return it to the user.
-        return head.value
+        
+        
+    def sum(self, a, b):
+        A = ''
+        B = ''
+        for i in reversed(a):
+            A += str(i)
+            # print(A)
+        for i in reversed(b):
+            B += str(i)
+            # print(B)
+        A = int(A)
+        B = int(B)
+        print( A +B)
 
+        
     def remove_duplicate(self, head):
         if self.head is None or self.head.next is None:
             return head
@@ -245,22 +226,8 @@ class LinkedList:
             temp.next = before
             before = temp
             temp = after
-            # return self
-        # pass 
-    #     reverse(){
-    #     let temp = this.head
-    #     this.head = this.tail
-    #     this.tail = temp
-    #     let next = temp.next
-    #     let prev = null
-    #     for(let i =0; i< this.length; i++){
-    #         next = temp.next
-    #         temp.next = prev
-    #         prev = temp
-    #         temp = next
-    #     }
-    #     return this
-    # }
+        # self.head = before
+        
         
 
  
@@ -279,9 +246,11 @@ myLinkedList.append(5)
 # myLinkedList.append(3)
 # print(myLinkedList.printKthToLast(5))
 print(myLinkedList.print_list())
-print(myLinkedList.partition(3))
-print(myLinkedList.print_list())
+# myLinkedList.sum([1,2,3],[4,5,6])
+# print(myLinkedList.partition(3))
+# print(myLinkedList.print_list())
 # print(myLinkedList.remove_duplicate(myLinkedList.head))
+# print(myLinkedList.print_list())
 # myLinkedList.pop()
 # myLinkedList.print_list()
 # print(myLinkedList.Get(2))
@@ -292,8 +261,8 @@ print(myLinkedList.print_list())
 # myLinkedList.print_list()
 # print(myLinkedList.remove(2))
 # myLinkedList.print_list()
-# myLinkedList.reverse()
-# myLinkedList.print_list()
+myLinkedList.reverse()
+myLinkedList.print_list()
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
 # print(myLinkedList.pop())
