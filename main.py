@@ -157,12 +157,13 @@ class LinkedList:
 
     def partition(self, x):
         x = self.Get(x)
+        print("data")
         tail = self
         head= self
 
         while self:
             next = self.next
-            print(next)
+            # print(next)
             if self.value < x.value :
                 self.next = head
                 head = self
@@ -227,6 +228,14 @@ class LinkedList:
             before = temp
             temp = after
         # self.head = before
+
+    def middle(self):
+        slow=fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.value
+        pass
         
         
 
@@ -236,6 +245,7 @@ myLinkedList = LinkedList(1)
 myLinkedList.append(2)
 myLinkedList.append(3)
 myLinkedList.append(2)
+myLinkedList.append(7)
 myLinkedList.append(3)
 myLinkedList.append(3)
 myLinkedList.append(4)
@@ -261,8 +271,9 @@ print(myLinkedList.print_list())
 # myLinkedList.print_list()
 # print(myLinkedList.remove(2))
 # myLinkedList.print_list()
-myLinkedList.reverse()
-myLinkedList.print_list()
+# myLinkedList.reverse()
+# myLinkedList.print_list()
+print(myLinkedList.middle())
 # print(myLinkedList.pop())
 # myLinkedList.print_list()
 # print(myLinkedList.pop())
