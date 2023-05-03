@@ -87,19 +87,34 @@ class DoubbleLinkedList:
             self.head = nezt
             self.length -= 1
             return temp.value
+    def removeDuplicate(self):
+        head = self.head
+        while head:
+            runner = head
+            while runner.next:
+                if runner.next.value == head.value:
+                    runner.next = runner.next.next
+                else:
+                    runner = runner.next
+            head = head.next
 
             
             
             
 
 myDLL = DoubbleLinkedList(4)
-myDLL.print_list()
-myDLL.append(3)
 # myDLL.print_list()
-# myDLL.append(2)
-myDLL.print_list()
-print(myDLL.pop())
+myDLL.append(3)
+# # myDLL.print_list()
+myDLL.append(2)
+# myDLL.print_list()
+# print(myDLL.pop())
 myDLL.prepend(0)
+
+myDLL.prepend(0)
+# myDLL.print_list()
+# print(myDLL.pop_first())
 myDLL.print_list()
-print(myDLL.pop_first())
+myDLL.removeDuplicate()
+print("oya cook")
 myDLL.print_list()
