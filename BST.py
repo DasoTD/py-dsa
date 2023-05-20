@@ -33,6 +33,19 @@ class BST:
                 else: 
                     temp = temp.right
 
+    def contains(self, value):
+        if self.root is None:
+            return False
+        
+        temp = self.root
+        while temp is not None:
+            if value < temp.value:
+                temp = temp.left
+            elif value > temp.value:
+                temp = temp.right
+            else:
+                return True
+        return False
         pass
 
 
@@ -46,3 +59,4 @@ tri.insert(3)
 print(tri.root.value)
 print(tri.root.left.value)
 print(tri.root.right.value)
+print(tri.contains(3))
