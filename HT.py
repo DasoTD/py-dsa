@@ -27,6 +27,14 @@ class HashTable:
             self.data_map[index]= []
         self.data_map[index].append([key, value])
 
+    def get_item(self, key):
+        index = self.__hash(key)
+        if self.data_map[index] is not None:
+            for i in range (len(self.data_map[index])):
+                if self.data_map[index][i][0] == key:
+                    return self.data_map[index][i][1]
+                
+        return None
 
 
 
@@ -43,3 +51,5 @@ HT.set_item("base", 1000)
 HT.set_item("dd", 100)
 HT.set_item("bb", 1040)
 HT.print_table()
+
+print(HT.get_item("basde"))
