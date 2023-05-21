@@ -36,6 +36,30 @@ class HashTable:
                 
         return None
 
+    def keys(self):
+        all_keys = []
+        for i in range(len(self.data_map)):
+            if self.data_map[i] is not None:
+                for j in range(len(self.data_map[i])):
+                    all_keys.append(self.data_map[i][j][0])
+
+        return all_keys
+    
+    def items_in_common1(list1, list2):
+        for i in list1:
+            for j in list2:
+                if i ==j:
+                    return True
+        return False
+    def items_in_common2(list1, list2):
+        my_dict = {}
+        for i in list1:
+            my_dict[i]= True
+
+        for j in list2:
+            if j in my_dict:
+                return True
+        return False
 
 
 
@@ -53,3 +77,5 @@ HT.set_item("bb", 1040)
 HT.print_table()
 
 print(HT.get_item("basde"))
+
+print(HT.keys())
