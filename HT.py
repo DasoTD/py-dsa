@@ -79,6 +79,20 @@ def first_non_repeating_char(string):
         if string_count[char] ==1:
             return char
 
+def group_anagrams(strings):
+    anagram_group = {}
+    for string in strings:
+        cannonical = ''.join(sorted(string))
+        if cannonical in anagram_group:
+            anagram_group[cannonical].append(string)
+        else:
+            anagram_group[cannonical] = [string]
+    
+    return list(anagram_group.values())
+
+
+
+
 # HT = HashTable()
 
 # HT.print_table()
@@ -105,3 +119,4 @@ def first_non_repeating_char(string):
 # print ( find_duplicates([]) )
 
 print(first_non_repeating_char("lleetcode"))
+print( group_anagrams(["listen", "silent", "triangle", "integral", "garden", "ranged"]) )
