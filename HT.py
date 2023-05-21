@@ -111,6 +111,56 @@ def subarray_sum(nums, target):
         sum_index[current_sum] = i
     return []
 
+def has_unique_chars(string):
+    stringg = set(string)
+    if len(stringg) == len(string):
+        return True
+    return False
+
+def has_unique_chars(string):
+    char_set = set()
+    for char in string:
+        if char in char_set:
+            return False
+        char_set.add(char)
+    return True
+
+
+def find_pairs(arr1, arr2, target):
+    set1 = set(arr1)
+    pairs = []
+    for num in arr2:
+        complement = target - num
+        if complement in set1:
+            pairs.append((complement, num))
+    return pairs
+
+
+def longest_consecutive_sequence(nums):
+    num_set = sorted(set(nums))
+    longest_sequence = 0
+    for num in nums:
+        current_num = num 
+        current_consequence =1
+
+        while current_num + 1 in num_set:
+            current_num +=1
+            current_consequence += 1
+        
+        longest_sequence = max(longest_sequence,current_consequence)
+    return longest_sequence
+
+
+
+print(longest_consecutive_sequence([1,2,6,4,6]))
+
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [2, 4, 6, 8, 10]
+target = 7
+
+pairs = find_pairs(arr1, arr2, target)
+print (pairs)
+
 
 
 nums = [1, 2, 3, 4, 5]
