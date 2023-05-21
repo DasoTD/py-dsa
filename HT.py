@@ -61,21 +61,47 @@ class HashTable:
                 return True
         return False
 
+def find_duplicates(nums):
+    nums_count = {}
+    for num in nums:
+        nums_count[num] = nums_count.get(num, 0)+1
+        # print(nums_count[num])
+    duplicates = [num for num, count in nums_count.items() if count > 1]
+    return duplicates
 
+def first_non_repeating_char(string):
+    string_count = {}
 
-HT = HashTable()
+    for char in string:
+        string_count[char] =string_count.get(char,0)+1
+    
+    for char in string:
+        if string_count[char] ==1:
+            return char
 
-HT.print_table()
-HT.set_item("data", 1400)
-HT.set_item("base", 1000)
-HT.set_item("data", 1400)
-HT.set_item("base", 1000)
-HT.set_item("data", 1400)
-HT.set_item("base", 1000)
-HT.set_item("dd", 100)
-HT.set_item("bb", 1040)
-HT.print_table()
+# HT = HashTable()
 
-print(HT.get_item("basde"))
+# HT.print_table()
+# HT.set_item("data", 1400)
+# HT.set_item("base", 1000)
+# HT.set_item("data", 1400)
+# HT.set_item("base", 1000)
+# HT.set_item("data", 1400)
+# HT.set_item("base", 1000)
+# HT.set_item("dd", 100)
+# HT.set_item("bb", 1040)
+# HT.print_table()
 
-print(HT.keys())
+# print(HT.get_item("basde"))
+
+# print(HT.keys())
+
+# print ( find_duplicates([1, 2, 3, 4, 5]) )
+# print ( find_duplicates([1, 1, 2, 2, 3]) )
+# print ( find_duplicates([1, 1, 1, 1, 1]) )
+# print ( find_duplicates([1, 2, 3, 3, 3, 4, 4, 5]) )
+# print ( find_duplicates([1, 1, 2, 2, 2, 3, 3, 3, 3]) )
+# print ( find_duplicates([1, 1, 1, 2, 2, 2, 3, 3, 3, 3,2]) )
+# print ( find_duplicates([]) )
+
+print(first_non_repeating_char("lleetcode"))
