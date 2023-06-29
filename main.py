@@ -1,5 +1,5 @@
 from operator import ne
-import this
+# import this
 
 
 class Node:
